@@ -1,0 +1,42 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Book",
+    "name": "La Emancipada",
+    "numberOfPages": 149,
+    "about": "Se trata de un chica en el siglo XIX que decide emanciparse de su padre",
+    "datePublished": "1863",
+    "genre": "http://dbpedia.org/ontology/Novel",
+    "inLanguage": "Spanish",
+    "locationCreated": "ECU",
+    "publisher": {
+      "@type": "Organization",
+      "legalName": "La Union"
+    },
+    "hasPart": [
+      {
+        "name": "Parte 1"
+      },
+      {
+        "name": "Parte 2"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "givenName": "Miguel",
+      "familyName": "Riofrio",
+      "birthDate": "7 de septiembre de 1822",
+      "gender": "Male",
+      "nationality": "ECU"
+    },
+    "character": [
+      {
+        "@type": "Person",
+        "givenName": "Eduardo",
+        "gender": "Male",
+        "nationality": "ECU",
+        "height": "Media"
+      }
+    ]
+  }
+]
