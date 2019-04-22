@@ -26,29 +26,29 @@ class ContextAdmin(admin.ModelAdmin):
 
 
 class KeyAdmin(admin.ModelAdmin):
-    list_display = ('context', 'property')
+    list_display = ('property', 'context')
     list_filter = ['context__url', 'context__prefix', 'property']
     search_fields = ['prefix']
 
 
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ('context', 'value')
+    list_display = ('value', 'context')
     list_filter = ['context__prefix', 'context__url', 'value']
     search_fields = ['value']
     inlines = [PredicateInline]
 
 
 class PredicateAdmin(admin.ModelAdmin):
-    list_display = ('key', 'subject')
-    list_filter = ['key__context__prefix', 'key__context__url', 'subject']
+    list_display = ('subject', 'property')
+    list_filter = ['property__context__prefix', 'property__context__url', 'subject']
     search_fields = ['subject']
     inlines = [ObjectInline]
 
 
 class ObjectAdmin(admin.ModelAdmin):
-    list_display = ('key', 'predicate', 'subject', 'label')
-    list_filter = ['key__context__prefix', 'key__context__url', 'predicate', 'subject', 'label']
-    search_fields = ['predicate', 'subject', 'label']
+    list_display = ('predicate', 'property', 'object', 'label')
+    list_filter = ['property__context__prefix', 'property__context__url', 'predicate', 'object', 'label']
+    search_fields = ['predicate', 'object', 'label']
 
 
 admin.site.register(Context, ContextAdmin)

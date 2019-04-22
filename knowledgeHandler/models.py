@@ -15,7 +15,7 @@ class Key(models.Model):
     property = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
-        return "%s%s" % (self.context, self.property)
+        return "%s/%s" % (self.context, self.property)
 
 
 class Subject(models.Model):
@@ -23,27 +23,25 @@ class Subject(models.Model):
     value = models.CharField(max_length=60, null=False, blank=False)
 
     def __str__(self):
-        return "%s:%s" % (self.context, self.value)
+        return "%s/%s" % (self.context, self.value)
 
 
 class Predicate(models.Model):
-    key = models.ForeignKey(Key, on_delete=models.CASCADE)
+    property = models.ForeignKey(Key, on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "%s:%s" % (self.key, self.subject)
+        return "<%s><%s>" % (self.subject, self.property)
 
 
 class Object(models.Model):
-    key = models.ForeignKey(Key, on_delete=models.CASCADE)
+    property = models.ForeignKey(Key, on_delete=models.CASCADE, null=True, blank=True)
     predicate = models.ForeignKey(Predicate, on_delete=models.CASCADE)
-    subject = models.ForeignKey(Subject, null=True, blank=True, on_delete=models.CASCADE)
+    object = models.ForeignKey(Subject, null=True, blank=True, on_delete=models.CASCADE)
     label = models.CharField(null=True, blank=True, max_length=300)
 
     def __str__(self):
         if self.predicate is None:
-            return "%s" % self.subject
+            return "%s" % self.object
         else:
             return "%s" % self.label
-
-

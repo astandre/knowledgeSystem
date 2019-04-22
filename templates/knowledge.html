@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Knowledge{% endblock %}
+{% block main %}
+    <div id="endpoint">
+        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' %}">/api/knowledge</a></p>
+    </div>
+    <pre><code id=json></code></pre>
+    <script type="text/javascript">
+        var jsonPrettyPrint = {
+            replacer: function (match, pIndent, pKey, pVal, pEnd) {
+                var key = '<span class=json-key>';
+                var val = '<span class=json-value>';
+                var str = '<span class=json-string>';
+                var r = pIndent || '';
+                if (pKey)
+                    r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+                if (pVal)
+                    r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+                return r + (pEnd || '');
+            },
+            toHtml: function (obj) {
+                var jsonLine =
+                    /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+                return JSON.stringify(obj, null, 3)
+                    .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+                    .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                    .replace(jsonLine, jsonPrettyPrint.replacer);
+            }
+        };
+
+        $(document).ready(function () {
+           console.log("ready!");
+           var URL = "{% url 'knowledge_api' %}";
+           makeAjaxCall(URL, "GET").then(function (respJson) {
+               $('#json').html(jsonPrettyPrint.toHtml(respJson["triples"]));
+
+           }, function (reason) {
+               console.log("error in processing your request", reason);
+           });
+
+        });
+
+        function makeAjaxCall(url, methodType, callback) {
+            return $.ajax({
+                url: url,
+                method: methodType,
+                dataType: "json",
+            })
+        }
+
+    </script>
+{% endblock %}
