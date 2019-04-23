@@ -1,0 +1,28 @@
+pre {
+    background-color: mintcream;
+    border: 1px solid silver;
+    padding: 10px 20px;
+    margin: 5% 13%;
+    /*width: 60%;*/
+
+}
+
+#endpoint {
+    padding: 10px 20px;
+    margin: 5% 13%;
+    text-align: center;
+    /*width: 60%;*/
+    background-color: #efefef;
+}
+
+.json-key {
+    color: brown;
+}
+
+.json-value {
+    color: navy;
+}
+
+.json-string {
+    color: olive;
+}

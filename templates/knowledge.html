@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge_style.css' %}">
+{% endblock %}
 {% block title %}Knowledge{% endblock %}
 {% block main %}
     <div id="endpoint">
