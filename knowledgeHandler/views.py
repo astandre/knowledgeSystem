@@ -37,3 +37,6 @@ def knowledge_api(request, id):
         resp.update(get_subject_as_json(subject))
         print(resp)
         return JsonResponse(resp, status=status.HTTP_200_OK)
+
+# TODO  crear arreglos cuando exista la misma propiedad  
+#       Presentar el nombre del objeto sino tiene valores 

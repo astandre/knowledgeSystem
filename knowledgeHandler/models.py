@@ -7,7 +7,7 @@ class Context(models.Model):
     prefix = models.CharField(max_length=10, null=True, blank=True)
 
     def __str__(self):
-        return self.url
+        return "%s : %s" % (self.prefix, self.url)
 
 
 class Key(models.Model):
@@ -54,3 +54,4 @@ class Object(models.Model):
             return "%s/%s" % (self.predicate.context, self.object)
         else:
             return "%s" % self.label
+# TODO poner las urls unicas 
