@@ -16,6 +16,246 @@
     }
   },
   {
+    "model": "knowledgeHandler.context",
+    "pk": 3,
+    "fields": {
+      "url": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "prefix": "rdf"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 4,
+    "fields": {
+      "url": "http://www.w3.org/2000/01/rdf-schema#",
+      "prefix": "rdfs"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 5,
+    "fields": {
+      "url": "http://xmlns.com/foaf/0.1/",
+      "prefix": "foaf"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 6,
+    "fields": {
+      "url": "http://example.com/resources/",
+      "prefix": "le"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 7,
+    "fields": {
+      "url": "https://www.w3.org/ns/prov#",
+      "prefix": "prov"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 8,
+    "fields": {
+      "url": "http://www.w3.org/2002/07/owl#",
+      "prefix": "owl"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 9,
+    "fields": {
+      "url": "http://www.w3.org/2001/XMLSchema#",
+      "prefix": "xsd"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 10,
+    "fields": {
+      "url": "http://open.vocab.org/",
+      "prefix": "ov"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 11,
+    "fields": {
+      "url": "http://purl.org/spar/fabio",
+      "prefix": "fabio"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 12,
+    "fields": {
+      "url": "https://www.ebu.ch/metadata/ontologies/ebucore/index.html#",
+      "prefix": "ebucore"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 13,
+    "fields": {
+      "url": "http://sparql.cwrc.ca/ontologies/cwrc#",
+      "prefix": "cwrc"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 14,
+    "fields": {
+      "url": "http://dbpedia.org/ontology/",
+      "prefix": "dbo"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 15,
+    "fields": {
+      "url": "http://lod.nl.go.kr/ontology/",
+      "prefix": "nlon"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 16,
+    "fields": {
+      "url": "http://dbpedia.org/page/",
+      "prefix": "dbpedia"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 17,
+    "fields": {
+      "url": "http://inference-web.org/2.0/pml-provenance.owl#",
+      "prefix": "pmlp"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 18,
+    "fields": {
+      "url": "https://w3id.org/i40/sto#",
+      "prefix": "sto"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 19,
+    "fields": {
+      "url": "http://purl.org/dc/terms/",
+      "prefix": "dcterms"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 20,
+    "fields": {
+      "url": "http://ns.nature.com/terms/",
+      "prefix": "npg"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 21,
+    "fields": {
+      "url": "https://w3id.org/BCI-ontology#",
+      "prefix": "bci"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 22,
+    "fields": {
+      "url": "http://vocab.deri.ie/void#",
+      "prefix": "void"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 23,
+    "fields": {
+      "url": "http://lsdis.cs.uga.edu/projects/semdis/opus#",
+      "prefix": "opus"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 24,
+    "fields": {
+      "url": "http://observedchange.com/tisc/ns/#",
+      "prefix": "tisc"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 25,
+    "fields": {
+      "url": "http://rdaregistry.info/Elements/u/",
+      "prefix": "rdau"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 26,
+    "fields": {
+      "url": "http://dati.cdec.it/lod/shoah/",
+      "prefix": "shoah"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 27,
+    "fields": {
+      "url": "https://d-nb.info/standards/elementset/gnd#",
+      "prefix": "gndo"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 28,
+    "fields": {
+      "url": "http://rdf.muninn-project.org/ontologies/appearances#",
+      "prefix": "aos"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 29,
+    "fields": {
+      "url": "http://vocab.org/bio/#",
+      "prefix": "bio"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 30,
+    "fields": {
+      "url": "http://purl.org/dc/elements/1.1/",
+      "prefix": "dc"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 31,
+    "fields": {
+      "url": "http://purl.org/NET/c4dm/event.owl#",
+      "prefix": "event"
+    }
+  },
+  {
+    "model": "knowledgeHandler.context",
+    "pk": 32,
+    "fields": {
+      "url": "http://purl.org/spar/deo/",
+      "prefix": "deo"
+    }
+  },
+  {
     "model": "knowledgeHandler.key",
     "pk": 1,
     "fields": {
@@ -56,6 +296,78 @@
     }
   },
   {
+    "model": "knowledgeHandler.key",
+    "pk": 6,
+    "fields": {
+      "context": 12,
+      "property": "hAsCharacter"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 7,
+    "fields": {
+      "context": 14,
+      "property": "abstract"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 8,
+    "fields": {
+      "context": 15,
+      "property": "publishedIn"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 9,
+    "fields": {
+      "context": 17,
+      "property": "hasPublicationDateTime"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 10,
+    "fields": {
+      "context": 18,
+      "property": "published"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 11,
+    "fields": {
+      "context": 14,
+      "property": "genre"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 12,
+    "fields": {
+      "context": 19,
+      "property": "language"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 13,
+    "fields": {
+      "context": 16,
+      "property": "writer"
+    }
+  },
+  {
+    "model": "knowledgeHandler.key",
+    "pk": 14,
+    "fields": {
+      "context": 12,
+      "property": "hasKeyword"
+    }
+  },
+  {
     "model": "knowledgeHandler.subject",
     "pk": 1,
     "fields": {
@@ -69,6 +381,22 @@
     "fields": {
       "context": 2,
       "value": "La_Union"
+    }
+  },
+  {
+    "model": "knowledgeHandler.subject",
+    "pk": 4,
+    "fields": {
+      "context": 6,
+      "value": "Rosaura"
+    }
+  },
+  {
+    "model": "knowledgeHandler.subject",
+    "pk": 6,
+    "fields": {
+      "context": 16,
+      "value": "Ecuador"
     }
   },
   {
@@ -132,6 +460,42 @@
       "property": 2,
       "keyword": null,
       "subject": 2
+    }
+  },
+  {
+    "model": "knowledgeHandler.predicate",
+    "pk": 8,
+    "fields": {
+      "property": 6,
+      "keyword": null,
+      "subject": 1
+    }
+  },
+  {
+    "model": "knowledgeHandler.predicate",
+    "pk": 9,
+    "fields": {
+      "property": 1,
+      "keyword": null,
+      "subject": 4
+    }
+  },
+  {
+    "model": "knowledgeHandler.predicate",
+    "pk": 10,
+    "fields": {
+      "property": 8,
+      "keyword": null,
+      "subject": 1
+    }
+  },
+  {
+    "model": "knowledgeHandler.predicate",
+    "pk": 11,
+    "fields": {
+      "property": 1,
+      "keyword": null,
+      "subject": 6
     }
   },
   {
@@ -202,6 +566,46 @@
       "predicate": 7,
       "object": null,
       "label": "La union"
+    }
+  },
+  {
+    "model": "knowledgeHandler.object",
+    "pk": 9,
+    "fields": {
+      "property": null,
+      "predicate": 9,
+      "object": null,
+      "label": "Rosaura"
+    }
+  },
+  {
+    "model": "knowledgeHandler.object",
+    "pk": 10,
+    "fields": {
+      "property": null,
+      "predicate": 8,
+      "object": 4,
+      "label": null
+    }
+  },
+  {
+    "model": "knowledgeHandler.object",
+    "pk": 11,
+    "fields": {
+      "property": null,
+      "predicate": 10,
+      "object": 6,
+      "label": null
+    }
+  },
+  {
+    "model": "knowledgeHandler.object",
+    "pk": 12,
+    "fields": {
+      "property": 1,
+      "predicate": 11,
+      "object": null,
+      "label": "Ecuador"
     }
   }
 ]
