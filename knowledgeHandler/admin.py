@@ -39,9 +39,9 @@ class SubjectAdmin(admin.ModelAdmin):
 
 
 class PredicateAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'property')
-    list_filter = ['property__context__prefix', 'property__context__url', 'subject']
-    search_fields = ['subject']
+    list_display = ('subject', 'property', 'keyword')
+    list_filter = ['property__context__prefix', 'property__context__url', 'subject', 'keyword']
+    search_fields = ['subject', 'keyword']
     inlines = [ObjectInline]
 
 

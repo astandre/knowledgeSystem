@@ -11,7 +11,7 @@ class Context(models.Model):
 
 
 class Key(models.Model):
-    context = models.ForeignKey(Context, on_delete=models.CASCADE)
+    context = models.ForeignKey(Context, on_delete=models.CASCADE, null=True, blank=True)
     property = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
@@ -27,11 +27,20 @@ class Subject(models.Model):
 
 
 class Predicate(models.Model):
-    property = models.ForeignKey(Key, on_delete=models.CASCADE)
+    property = models.ForeignKey(Key, on_delete=models.CASCADE, null=True, blank=True)
+    TYPE = "b"
+    ID = "i"
+    CONTEXT = "x"
+    KEYWORD_CHOICES = (
+        (TYPE, "@type"),
+        (ID, "@id"),
+        (CONTEXT, "@context"),
+    )
+    keyword = models.CharField(choices=KEYWORD_CHOICES, max_length=2, null=True, blank=True)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "%s/%s" % (self.subject, self.property)
+        return "<%s><%s>" % (self.subject, self.property)
 
 
 class Object(models.Model):

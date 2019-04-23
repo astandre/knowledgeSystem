@@ -6,7 +6,7 @@
 {% block title %}Knowledge{% endblock %}
 {% block main %}
     <div id="endpoint">
-        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' %}">/api/knowledge</a></p>
+        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' id=1  %}">/api/knowledge</a></p>
     </div>
     <pre><code id=json></code></pre>
     <script type="text/javascript">
@@ -34,9 +34,9 @@
 
         $(document).ready(function () {
            console.log("ready!");
-           var URL = "{% url 'knowledge_api' %}";
+           var URL = "{% url 'knowledge_api' id=1 %}";
            makeAjaxCall(URL, "GET").then(function (respJson) {
-               $('#json').html(jsonPrettyPrint.toHtml(respJson["triples"]));
+               $('#json').html(jsonPrettyPrint.toHtml(respJson));
 
            }, function (reason) {
                console.log("error in processing your request", reason);
