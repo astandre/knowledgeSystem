@@ -1,0 +1,194 @@
+#pedia:# La emancipada
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix le: <http://example.com/resources/> .
+@prefix prov: <https://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ov: <http://open.vocab.org/> .
+@prefix fabio: <http://purl.org/spar/fabio> .
+@prefix ebucore: <https://www.ebu.ch/metadata/ontologies/ebucore/index.html#> .
+@prefix cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix dbo:  <http://dbpedia.org/ontology/> .
+@prefix nlon:  <http://lod.nl.go.kr/ontology/> .
+@prefix dbpedia:  <http://dbpedia.org/page/> .
+@prefix pmlp:  <http://inference-web.org/2.0/pml-provenance.owl#> .
+@prefix sto:  <https://w3id.org/i40/sto#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix npg:  <http://ns.nature.com/terms/> .
+
+@prefix bci: <https://w3id.org/BCI-ontology#> .
+@prefix void: <http://vocab.deri.ie/void#> .
+@prefix opus:<http://lsdis.cs.uga.edu/projects/semdis/opus#>.
+@prefix tisc:<http://observedchange.com/tisc/ns/#>.
+@prefix rdau:<http://rdaregistry.info/Elements/u/>.
+@prefix shoah:<http://dati.cdec.it/lod/shoah/>.
+@prefix gndo:<https://d-nb.info/standards/elementset/gnd#>.
+@prefix aos:<http://rdf.muninn-project.org/ontologies/appearances#>.
+@prefix bio:<http://vocab.org/bio/#>.
+@prefix dc:  <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#>.
+@prefix deo:<http://purl.org/spar/deo/>.
+# Obra principal
+
+le:Maria rdf:type fabio:Novel;
+	nlon:publishedIn dbpedia:Ecuador;
+	dbo:genre dbpedia:Novel;
+	dcterms:language dbpedia:Spanish_language;
+	dbpedia:writer le:MiguelRiofrio;
+	le:placeWriting dbpedia:Ecuador;
+.
+le:NicaYacu rdf:type fabio:Novel;
+	nlon:publishedIn dbpedia:Ecuador;
+	dbo:genre dbpedia:Novel;
+	dcterms:language dbpedia:Spanish_language;
+	dbpedia:writer le:MiguelRiofrio;
+	le:placeWriting dbpedia:Ecuador;
+.
+le:DelirioDeBolivar rdf:type fabio:Novel;
+	nlon:publishedIn dbpedia:Ecuador;
+	dbo:genre dbpedia:Novel;
+	dcterms:language dbpedia:Spanish_language;
+	dbpedia:writer le:MiguelRiofrio;
+	le:placeWriting dbpedia:Ecuador;
+.
+le:CreacionesDeLenguaje rdf:type fabio:InstructionalWork;
+	nlon:publishedIn dbpedia:Peru;
+	dbo:genre dbpedia:Book;
+	dcterms:language dbpedia:Spanish_language;
+	dbpedia:writer le:MiguelRiofrio;
+	le:placeWriting dbpedia:Ecuador;
+.
+
+le:Emancipada rdf:type fabio:Novel;
+	ebucore:hAsCharacter le:Eduardo;
+	ebucore:hAsCharacter le:Rosaura;
+	ebucore:hAsCharacter le:Madre;
+	ebucore:hAsCharacter le:Padre;
+	ebucore:hAsCharacter le:DonPedro;
+	ebucore:hAsCharacter le:Cura;
+	ebucore:hAsCharacter le:LosCriados;
+	ebucore:hAsCharacter le:DonAnselmo;
+	dbo:abstract "Se trata de un chica en el siglo XIX que decide emanciparse de su padre";
+	nlon:publishedIn dbpedia:Ecuador;
+	pmlp:hasPublicationDateTime "1863" ;
+	sto:published le:LaUnion ;
+	dbo:genre dbpedia:Novel;
+	dcterms:language dbpedia:Spanish_language;
+	dbpedia:writer le:MiguelRiofrio;
+	npg:pages	"149";
+	ebucore:hasKeyword "Libertad";
+	bci:hasScene le:Malacatos ;
+	void:vocabulary le:Privativa ;
+	void:vocabulary le:Desdeñado ;
+	void:vocabulary le:Morbidez ;
+	void:vocabulary le:Exhalacion ;
+	void:vocabulary le:Voluptuosidad ;
+	void:vocabulary le:Teson ;
+	void:vocabulary le:Agreste ;
+	void:vocabulary le:Acequias ;
+	void:vocabulary le:Alquerias ;
+	void:vocabulary le:Truhanescos ;
+	void:vocabulary le:Miserere ;
+	void:vocabulary le:Enjuto ;
+	void:vocabulary le:Prolijidad ;
+	void:vocabulary le:Melindres ;
+	void:vocabulary le:Reciproco ;
+	void:vocabulary le:Antifona ;
+	opus:chapter "2";
+	le:escritoEn le:TiempoCronologico;
+	le:hasSeason le:TiempoHistorico;
+	le:hasSeason le:TiempoAmbiental;
+	le:hasSeason le:TiempoGramatical;
+	le:placeWriting dbpedia:Ecuador;
+.
+#Desarollo de la emancipada
+
+le:DesarolloEmancipada rdf:type event:Event;
+	event:year "1800";
+	event:place dbpedia:Loja;
+.
+
+# Capitulos
+le:Parte1 opus:chapter_of le:Emancipada ;
+	opus:chapter "4";
+	.
+le:Parte2 opus:chapter_of le:Emancipada ;
+	opus:chapter "3";		
+	.
+
+# Personajes
+le:Eduardo rdf:type cwrc:FictionalPerson;
+	tisc:hasHeight "Media";
+	#Tambien sirve para lugar donde estudio o trabajo	
+	rdau:placeOfResidence dbpedia:Quito;
+	foaf:lastName	"Ramirez";
+	aos:hasAppearance "regulares";
+	.
+le:Rosaura rdf:type cwrc:FictionalPerson;
+	dbo:spouse le:DonAnselmo;
+	tisc:hasHeight "Alta";
+	dbo:hairColor "castaño oscuro";
+	foaf:lastName	"Mendoza" ;
+	aos:hasAppearance "fina";
+	.
+le:Madre rdf:type cwrc:FictionalPerson;
+	.
+le:Padre rdf:type cwrc:FictionalPerson;
+	.
+le:DonPedro rdf:type cwrc:FictionalPerson;
+	foaf:lastName	"Mendoza" ;
+	.
+le:Cura rdf:type cwrc:FictionalPerson;
+	.
+le:LosCriados rdf:type cwrc:FictionalPerson;
+	.
+le:DonAnselmo rdf:type cwrc:FictionalPerson;
+	shoah:widowerOf le:Rosaura;
+	foaf:lastName	"Aguirre" ;
+	foaf:lastName	"Zuñiga" ;
+	.
+# Tiempos
+le:TiempoCronologico rdfs:comment "La novela relata que los sucesos ocurren en 1841";
+.
+le:TiempoHistorico rdfs:comment "La obra fue escrita en la Apoca del Romanticismo, en el año de 1863";
+.
+le:TiempoAmbiental rdfs:comment "El ambiente de la historia es en pleno verano";
+.
+le:TiempoGramatical rdfs:comment "La historia se relata en tercera persona";
+.
+
+# M
+le:M dcterms:isPartOf dbpedia:Ecuador;
+# 	Se desarrolla la historia
+#  Es una ciudad
+.
+
+# Miguel riofrio
+le:MiguelRiofrio  owl:sameAs dbpedia:Miguel_Riofrio;
+	gndo:professionOrOccupation dbpedia:politician;
+	gndo:professionOrOccupation dbpedia:writer;
+	gndo:professionOrOccupation dbpedia:lawyer;
+	gndo:professionOrOccupation dbpedia:professor;
+	gndo:professionOrOccupation dbpedia:poet;
+	gndo:professionOrOccupation dbpedia:journalist;
+	gndo:professionOrOccupation dbpedia:ambassador;
+	gndo:professionOrOccupation dbpedia:professor;
+	deo:contribution le:Emancipada ;
+	deo:contribution le:NicaYacu ;
+	deo:contribution le:Maria ;
+	deo:contribution le:DelirioDeBolivar ;
+	deo:contribution le:CreacionesDeLenguaje;
+	bio:Birth le:NacimientoMiguelRiofrio;
+	bio:Death le:MuerteMiguelRiofrio;
+. 
+
+le:NacimientoMiguel dc:date "7 de septiembre de 1822";
+	bio:principal dbpedia:Miguel_Riofrio;
+	bio:place dbpedia:Loja_Province;
+.
+le:MuerteMiguelRiofrio dc:date "11 de octubre de 1879";
+	bio:place dbpedia:Loja_Province;
+.
+

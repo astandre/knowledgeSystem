@@ -4,9 +4,11 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import *
 from .utils import *
-
-
+from rdflib import Graph,plugin
+import pprint
+from rdflib.serializer import Serializer
 # Create your views here.
+
 
 def knowledge(request):
     """
@@ -38,5 +40,17 @@ def knowledge_api(request, id):
         print(resp)
         return JsonResponse(resp, status=status.HTTP_200_OK)
 
-# TODO  crear arreglos cuando exista la misma propiedad  
-#       Presentar el nombre del objeto sino tiene valores 
+# TODO  crear arreglos cuando exista la misma propiedad
+#       Presentar el nombre del objeto sino tiene valores
+
+
+@api_view(['GET'])
+def read_rdf(request):
+    g = Graph()
+    g.parse("data4.rdf")
+    print("graph has %s statements." % len(g))
+    for stmt in g:
+        pprint.pprint(stmt)
+    print(g.serialize(format='json-ld'))
+    fuck = {"f": 1, "u": 2, "c": 4, "k": 4,"long":len(g)}
+    return HttpResponse(g.serialize(format='json-ld'))
