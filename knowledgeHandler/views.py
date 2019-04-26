@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import *
 from .utils import *
-from rdflib import Graph,plugin
+from rdflib import Graph,plugin,URIRef
 import pprint
 from rdflib.serializer import Serializer
 # Create your views here.
@@ -21,7 +21,7 @@ def knowledge(request):
 
 
 @api_view(['GET'])
-def knowledge_api(request, id):
+def knowledge_api(request):
     """
     End point where knowledge data comes
     :param request:
@@ -49,8 +49,10 @@ def read_rdf(request):
     g = Graph()
     g.parse("data4.rdf")
     print("graph has %s statements." % len(g))
-    for stmt in g:
-        pprint.pprint(stmt)
-    print(g.serialize(format='json-ld'))
-    fuck = {"f": 1, "u": 2, "c": 4, "k": 4,"long":len(g)}
+    # palabra clave
+    search = "Maria"
+    link = "http://example.com/resources/"+search
+    LE = URIRef(link)
+    # Para que busque todos los datos relacionanados
+    g.predicates(LE)
     return HttpResponse(g.serialize(format='json-ld'))
