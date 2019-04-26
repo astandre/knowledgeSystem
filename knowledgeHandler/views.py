@@ -4,9 +4,12 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import *
 from .utils import *
-from rdflib import Graph,plugin,URIRef
+from rdflib import Graph, plugin, URIRef
 import pprint
 from rdflib.serializer import Serializer
+from .serializers import WordSerializer
+
+
 # Create your views here.
 
 
@@ -40,19 +43,26 @@ def knowledge_api(request):
         print(resp)
         return JsonResponse(resp, status=status.HTTP_200_OK)
 
+
 # TODO  crear arreglos cuando exista la misma propiedad
 #       Presentar el nombre del objeto sino tiene valores
 
 
 @api_view(['GET'])
 def read_rdf(request):
-    g = Graph()
-    g.parse("data4.rdf")
-    print("graph has %s statements." % len(g))
-    # palabra clave
-    search = "Maria"
-    link = "http://example.com/resources/"+search
-    LE = URIRef(link)
-    # Para que busque todos los datos relacionanados
-    g.predicates(LE)
-    return HttpResponse(g.serialize(format='json-ld'))
+    if request.method == 'GET':
+        word_serializer = WordSerializer(data=request.data)
+        if word_serializer.is_valid():
+            g = Graph()
+            g.parse("data4.rdf")
+            print("graph has %s statements." % len(g))
+            # palabra clave
+            search = "Maria"
+            link = "http://example.com/resources/" + word_serializer.data["word"]
+            LE = URIRef(link)
+            # Para que busque todos los datos relacionanados
+            g.predicates(LE)
+
+            return HttpResponse(g.serialize(format='json-ld'))
+        else:
+            return JsonResponse(word_serializer.errors, status=status.HTTP_404_NOT_FOUND)
