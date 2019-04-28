@@ -7,9 +7,6 @@
 {% block title %}Knowledge{% endblock %}
 {% block main %}
 
-    <div id="endpoint">
-        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' id=1 %}">/api/knowledge</a></p>
-
     <div class="wrap">
         <div class="search">
             <input type="text" class="searchTerm" placeholder="Que deseas conocer?">
@@ -18,12 +15,9 @@
             </button>
         </div>
     </div>
-    {#    <div id="endpoint">#}
-    {#        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' id=1 %}">/api/knowledge</a></p>#}
-    {#    </div>#}
-    <pre style="visibility: hidden;"><code id=json></code></pre>
+    <pre id="jsonContainer" style="visibility: hidden;"><code id=json></code></pre>
     <script type="text/javascript">
-    var csrftoken = Cookies.get('csrftoken');
+        var csrftoken = Cookies.get('csrftoken');
         var jsonPrettyPrint = {
             replacer: function (match, pIndent, pKey, pVal, pEnd) {
                 var key = '<span class=json-key>';
@@ -45,19 +39,18 @@
                     .replace(jsonLine, jsonPrettyPrint.replacer);
             }
         };
-
-
-        $(document).ready(function () {
-            console.log("ready!");
+        $(".searchButton").click(function () {
             var URL = "{% url 'read_rdf'  %}";
-            var data = {"word": "Maria"};
-            makeAjaxCall(URL, "POST", JSON.stringify( data)).then(function (respJson) {
-                $('#json').html(jsonPrettyPrint.toHtml(respJson));
+            var data = {"word": $(".searchTerm").val()};
+            console.log(data);
+            makeAjaxCall(URL, "POST", JSON.stringify(data)).then(function (respJson) {
+                $("#jsonContainer").css('visibility', 'visible');
+                $('#json')
+                    .html(jsonPrettyPrint.toHtml(respJson));
 
             }, function (reason) {
                 console.log("error in processing your request", reason);
             });
-
         });
 
 
