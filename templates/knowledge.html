@@ -6,10 +6,22 @@
 {% endblock %}
 {% block title %}Knowledge{% endblock %}
 {% block main %}
+
     <div id="endpoint">
         <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' id=1 %}">/api/knowledge</a></p>
+
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Que deseas conocer?">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
     </div>
-    <pre><code id=json></code></pre>
+    {#    <div id="endpoint">#}
+    {#        <p><b>Access our API:</b> endpoint GET: <a href="{% url 'knowledge_api' id=1 %}">/api/knowledge</a></p>#}
+    {#    </div>#}
+    <pre style="visibility: hidden;"><code id=json></code></pre>
     <script type="text/javascript">
     var csrftoken = Cookies.get('csrftoken');
         var jsonPrettyPrint = {
@@ -34,6 +46,7 @@
             }
         };
 
+
         $(document).ready(function () {
             console.log("ready!");
             var URL = "{% url 'read_rdf'  %}";
@@ -46,6 +59,7 @@
             });
 
         });
+
 
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
