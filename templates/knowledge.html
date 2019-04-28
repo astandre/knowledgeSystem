@@ -38,7 +38,7 @@
             console.log("ready!");
             var URL = "{% url 'read_rdf'  %}";
             var data = {"word": "Maria"};
-            makeAjaxCall(URL, "GET", JSON.stringify( data)).then(function (respJson) {
+            makeAjaxCall(URL, "POST", JSON.stringify( data)).then(function (respJson) {
                 $('#json').html(jsonPrettyPrint.toHtml(respJson));
 
             }, function (reason) {

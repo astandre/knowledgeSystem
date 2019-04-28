@@ -48,9 +48,9 @@ def knowledge_api(request):
 #       Presentar el nombre del objeto sino tiene valores
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def read_rdf(request):
-    if request.method == 'GET':
+    if request.method == 'POST':
         word_serializer = WordSerializer(data=request.data)
         if word_serializer.is_valid():
             g = Graph()
