@@ -2,10 +2,16 @@
 {% load static %}
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="{% static 'js/particles/.js' %}"></script>
 {% endblock %}
 {% block title %}Knowledge{% endblock %}
 {% block main %}
+    
+    <div id="content_title">
+        <h1>Mi Super Buscador</h1>
+    </div>
 
     <div class="wrap">
         <div class="search">
@@ -15,7 +21,15 @@
             </button>
         </div>
     </div>
-    <pre id="jsonContainer" style="visibility: hidden;"><code id=json></code></pre>
+    <div id="particles-js">
+        <pre id="jsonContainer" style="visibility: hidden;"><code id=json></code></pre>
+    </div>
+
+    <!-- Particles scrips-->
+    <script src="{% static 'js/particles/particles.js' %}"></script>
+    <script src="{% static 'js/particles/app.js' %}"></script>
+    <script src="{% static 'js/particles/stats.js' %}"></script>
+
     <script type="text/javascript">
         var csrftoken = Cookies.get('csrftoken');
         var jsonPrettyPrint = {
@@ -74,5 +88,27 @@
             })
         }
 
+    </script>
+    
+
+    <!-- Particles Implemntatios-->
+    <script>
+      var count_particles, stats, update;
+      stats = new Stats;
+      stats.setMode(0);
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0px';
+      stats.domElement.style.top = '0px';
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector('.js-count-particles');
+      update = function() {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
     </script>
 {% endblock %}

@@ -1,11 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 pre {
-    background-color: mintcream;
-    border: 1px solid silver;
+    background-color: rgba(0,0,0,.5);
+    /*border: 1px solid silver;*/
     padding: 10px 20px;
-    margin: 5% 13%;
-    /*width: 60%;*/
+    margin: 7% 23%;
+    max-height: 45em;
+    overflow: scroll;
+    position: absolute;
+    
+    /*klS*/
+    color: #fff;
 
 }
 
@@ -46,10 +51,11 @@ body {
     border: 3px solid #00B4CC;
     border-right: none;
     padding: 5px;
-    height: 20px;
+    height: 40px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: #7575a3;
+    font-size: 1.5em;
 }
 
 .searchTerm:focus {
@@ -57,8 +63,8 @@ body {
 }
 
 .searchButton {
-    width: 40px;
-    height: 36px;
+    width: 65px;
+    height: 56px;
     border: 1px solid #00B4CC;
     background: #00B4CC;
     text-align: center;
@@ -69,7 +75,7 @@ body {
 }
 
 /*Resize the wrap to see the search bar change!*/
-.wrap {
+#wrap {
     width: 30%;
     position: absolute;
     top: 52%;

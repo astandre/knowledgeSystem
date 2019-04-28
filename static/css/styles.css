@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#content_title {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #fff;
+  text-align: center;
+}
+#content_title h1 {
+  color: #00B4CC;
+  padding: 20px 0;
+}
+
+.wrap {
+  width: 60%;
+  text-align: center;
+  margin: 2% 20%;
+}
+
+#particles-js {
+  width: 100%;
+  overflow: hidden;
+  background-color: #29303b;
+  margin-top: -8%;
+}
+
+/*Oculatar mini panel Particulas*/
+#stats {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
