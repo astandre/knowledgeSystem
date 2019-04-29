@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import *
 from .utils import *
-from rdflib import Graph, plugin, URIRef
+from rdflib import Graph, plugin, URIRef ,RDF
 import pprint
 from rdflib.serializer import Serializer
 from .serializers import WordSerializer
@@ -61,8 +61,10 @@ def read_rdf(request):
             link = "http://example.com/resources/" + word_serializer.data["word"]
             LE = URIRef(link)
             # Para que busque todos los datos relacionanados
-            g.predicates(LE)
 
-            return HttpResponse(g.serialize(format='json-ld'))
+            resultGraph = Graph()
+            resultGraph += g.triples((None, None, LE))
+
+            return HttpResponse(resultGraph.serialize(format='json-ld'))
         else:
             return JsonResponse(word_serializer.errors, status=status.HTTP_404_NOT_FOUND)
