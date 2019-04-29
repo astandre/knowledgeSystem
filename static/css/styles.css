@@ -32,4 +32,44 @@
   display: none;
 }
 
+#authors_content {
+  width: 100%;
+  padding: 0.5rem 0 1rem;
+  background-color: #002645;
+}
+#authors_content h4 {
+  padding: 1rem 0;
+  margin-left: 4%;
+  color: #00B4CC;
+}
+#authors_content ul {
+  list-style: none;
+  width: 100%;
+}
+#authors_content ul li {
+  width: 33%;
+  text-align: center;
+  display: inline-block;
+}
+#authors_content ul li figure {
+  width: 20%;
+  margin: auto;
+}
+#authors_content ul li figure img {
+  width: 100%;
+}
+#authors_content ul li p {
+  color: #ccc;
+}
+
+footer {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #1D262D;
+}
+footer h6 {
+  color: #869FB2;
+}
+
 /*# sourceMappingURL=styles.css.map */
