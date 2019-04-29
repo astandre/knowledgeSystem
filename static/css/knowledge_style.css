@@ -23,15 +23,15 @@ pre {
 }
 
 .json-key {
-    color: brown;
+    color: red;
 }
 
 .json-value {
-    color: navy;
+    color: blue;
 }
 
 .json-string {
-    color: olive;
+    color: yellow;
 }
 
 
