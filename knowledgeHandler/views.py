@@ -2,12 +2,11 @@ from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .models import *
 from .utils import *
-from rdflib import Graph, plugin, URIRef ,RDF
-import pprint
-from rdflib.serializer import Serializer
+from rdflib import Graph, plugin, URIRef, RDF
+from decouple import config
 from .serializers import WordSerializer
+from .services import *
 
 
 # Create your views here.
@@ -18,8 +17,32 @@ def knowledge(request):
     View knowledge JSON
     """
     template = loader.get_template('knowledge.html')
+    if config('MAIN', cast=bool):
+        local_url = config('MAIN_URL')
+    else:
+        local_url = config('SLAVE_URL')
+    context = {
+        "url": local_url
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def answer(request, word):
+    template = loader.get_template('result.html')
     context = {
     }
+    properties = [
+        {"key": "key", "value": "value"},
+        {"key": "key", "value": "value"},
+        {"key": "key", "value": "value"},
+        {"key": "key", "value": "value"}
+    ]
+    result = search(word)
+    if len(result) > 0:
+        print(result)
+        context["properties"] = properties
+    # TODO manejar aqui el json que se va a presentar y reemplazarlo en properties
+
     return HttpResponse(template.render(context, request))
 
 
@@ -44,24 +67,20 @@ def knowledge_api(request):
         return JsonResponse(resp, status=status.HTTP_200_OK)
 
 
-# TODO  crear arreglos cuando exista la misma propiedad
-#       Presentar el nombre del objeto sino tiene valores
-
-
 @api_view(['POST'])
 def read_rdf(request):
     if request.method == 'POST':
         word_serializer = WordSerializer(data=request.data)
         if word_serializer.is_valid():
             g = Graph()
-            g.parse("data4.rdf")
+            if config('MAIN', cast=bool):
+                g.parse("data4.rdf")
+            else:
+                g.parse("data2.rdf")
             print("graph has %s statements." % len(g))
-            # palabra clave
-            search = "Maria"
             link = "http://example.com/resources/" + word_serializer.data["word"]
             LE = URIRef(link)
             # Para que busque todos los datos relacionanados
-
             resultGraph = Graph()
             resultGraph += g.triples((None, None, LE))
 

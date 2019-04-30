@@ -1,29 +1,15 @@
 # Knowledge System
-1. Crear super usuario
 
-`
-python manage.py createsuperuser
-`
+Crear dos carpetas del mismo proyecto, para  correr el proyecto principal, ejecutarlo normalmente.
+1. Correr el proyecto principal
 
-2. Cargar data 
+    `
+    python manage.py runserver 127.0.0.1:8000
+    `
 
-`
-python manage.py loaddata initial_data
-`
+2. Para correr el segundo proyecto cambiar en el archivo .env la variable *MAIN* a False. Correr el segundo servicio en el puerto 8080
 
-3. Lanzar servidor
-
-`
-python manage.py runserver
-`
-
-4. Acceder a la url http://127.0.0.1:8000/knowledge
-
-
-##NOTA
-
-En caso de necesitar exportar la base de datos usar el siguiente comando
-
-`
-dumpdata knowledgeHandler.context knowledgeHandler.key knowledgeHandler.subject knowledgeHandler.predicate knowledgeHandler.object
-`
+    `
+    python manage.py runserver 127.0.0.1:8080
+    `
+    
