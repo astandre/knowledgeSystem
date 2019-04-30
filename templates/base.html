@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     {#    <link rel="stylesheet" type="text/css" href="{% static 'base_style.css' %}">#}
     {% block head %}
     {% endblock %}
@@ -21,6 +23,32 @@
 {% block main %}
 
 {% endblock %}
+<div id="authors_content">
+    <h4>Desarrolladores</h4>
+    <ul>
+        <li>
+            <figure>
+                <img src="{% static 'img/user.png' %}" alt="Icon user">
+            </figure>
+            <p>André Herrera</p>
+        </li>
+        <li>
+            <figure>
+                <img src="{% static 'img/user.png' %}" alt="Icon user">
+            </figure>
+            <p>Diego Castillo</p>
+        </li>
+        <li>
+            <figure>
+                <img src="{% static 'img/user.png' %}" alt="Icon user">
+            </figure>
+            <p>Klever Sarango</p>
+        </li>
+    </ul>
+</div>
+<footer>
+    <h6>Knowledge-Based Systems Research Group</h6>
+</footer>
 
 </body>
 </html>

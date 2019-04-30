@@ -84,7 +84,6 @@ target/
 __pycache__/
 local_settings.py
 
-.env
 db.sqlite3
 
 # Byte-compiled / optimized / DLL files
@@ -178,7 +177,7 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
+#.env
 .venv
 env/
 venv/

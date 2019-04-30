@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+
+{% endblock %}
+{% block title %}Result{% endblock %}
+{% block main %}
+    {% if properties %}
+        {% for property in properties %}
+            <h2>{{ property.key }} | {{ property.value }} </h2>
+        {% endfor %}
+    {% else %}
+        <h3>No se ha encontrado</h3>
+    {% endif %}
+{% endblock %}

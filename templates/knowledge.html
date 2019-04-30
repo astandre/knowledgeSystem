@@ -2,12 +2,9 @@
 {% load static %}
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge_style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 {% endblock %}
 {% block title %}Knowledge{% endblock %}
 {% block main %}
-    
     <div id="content_title">
         <h1>Buscador de Datos Enlazados</h1>
     </div>
@@ -21,119 +18,38 @@
         </div>
     </div>
     <div id="particles-js">
-        <pre id="jsonContainer" style="visibility: hidden;"><code id=json></code></pre>
     </div>
-    <div id="authors_content">
-        <h4>Desarrolladores</h4>
-        <ul>
-            <li>
-                <figure>
-                    <img src="{% static 'img/user.png' %}" alt="Icon user">
-                </figure>
-                <p>André Herrera</p>
-            </li>
-            <li>
-                <figure>
-                    <img src="{% static 'img/user.png' %}" alt="Icon user">
-                </figure>
-                <p>Diego Castillo</p>
-            </li>
-            <li>
-                <figure>
-                    <img src="{% static 'img/user.png' %}" alt="Icon user">
-                </figure>
-                <p>Klever Sarango</p>
-            </li>
-        </ul>
-    </div>
-    <footer>
-        <h6>Knowledge-Based Systems Research Group</h6>
-    </footer>
+    <script type="text/javascript">
+        $(".searchButton").click(function () {
+            var URL = "{{ url }}";
+            var word = $(".searchTerm").val();
+            window.location.replace(URL + "/answer/" + word);
 
+        });
+    </script>
     <!-- Particles scrips-->
     <script src="{% static 'js/particles/particles.js' %}"></script>
     <script src="{% static 'js/particles/app.js' %}"></script>
     <script src="{% static 'js/particles/stats.js' %}"></script>
-
-    <script type="text/javascript">
-        var csrftoken = Cookies.get('csrftoken');
-        var jsonPrettyPrint = {
-            replacer: function (match, pIndent, pKey, pVal, pEnd) {
-                var key = '<span class=json-key>';
-                var val = '<span class=json-value>';
-                var str = '<span class=json-string>';
-                var r = pIndent || '';
-                if (pKey)
-                    r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
-                if (pVal)
-                    r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
-                return r + (pEnd || '');
-            },
-            toHtml: function (obj) {
-                var jsonLine =
-                    /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
-                return JSON.stringify(obj, null, 3)
-                    .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
-                    .replace(/</g, '&lt;').replace(/>/g, '&gt;')
-                    .replace(jsonLine, jsonPrettyPrint.replacer);
-            }
-        };
-        $(".searchButton").click(function () {
-            var URL = "{% url 'read_rdf'  %}";
-            var data = {"word": $(".searchTerm").val()};
-            console.log(data);
-            makeAjaxCall(URL, "POST", JSON.stringify(data)).then(function (respJson) {
-                $("#jsonContainer").css('visibility', 'visible');
-                $('#json')
-                    .html(jsonPrettyPrint.toHtml(respJson));
-
-            }, function (reason) {
-                console.log("error in processing your request", reason);
-            });
-        });
-
-
-        function csrfSafeMethod(method) {
-            // these HTTP methods do not require CSRF protection
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-
-        function makeAjaxCall(url, methodType, data, callback) {
-            return $.ajax({
-                url: url,
-                method: methodType,
-                dataType: "json",
-                contentType: 'application/json',
-                data: data,
-                beforeSend: function (xhr, settings) {
-                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    }
-                },
-            })
-        }
-
-    </script>
-    
-
     <!-- Particles Implemntatios-->
     <script>
-      var count_particles, stats, update;
-      stats = new Stats;
-      stats.setMode(0);
-      stats.domElement.style.position = 'absolute';
-      stats.domElement.style.left = '0px';
-      stats.domElement.style.top = '0px';
-      document.body.appendChild(stats.domElement);
-      count_particles = document.querySelector('.js-count-particles');
-      update = function() {
-        stats.begin();
-        stats.end();
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-        }
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function () {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+        };
         requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
     </script>
+
 {% endblock %}
