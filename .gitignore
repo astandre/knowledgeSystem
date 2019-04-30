@@ -1,4 +1,7 @@
 .vscode
+.idea/knowledgeSystem.iml
+.idea/misc.xml
+
 ### OSX ###
 .DS_Store
 .AppleDouble

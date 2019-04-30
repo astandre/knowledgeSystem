@@ -10,6 +10,8 @@ from .services import *
 import json
 import types
 import itertools
+
+
 # Create your views here.
 
 
@@ -37,6 +39,7 @@ def answer(request, word):
     properties = []
     context = {}
     result = search(word)
+    print(result)
     if len(result) > 0:
         for i in result:
             for j in i.keys():
@@ -57,12 +60,15 @@ def answer(request, word):
                 str = str.rsplit('/', 1)[1]
                 values_clean.append(str)
             else:
-                str = i.rsplit('/',1)[1]
+                str = i.rsplit('/', 1)[1]
                 values_clean.append(str)
 
-        for k, v in zip(keys_clean,values_clean):
-            data = {}
-            data[k] = v
+        for k, v in zip(keys_clean, values_clean):
+            data = {
+                "key": k,
+                "value": v
+            }
+            # data[k] = v
             properties.append(data)
         context["properties"] = properties
     return HttpResponse(template.render(context, request))
@@ -105,7 +111,7 @@ def read_rdf(request):
             # Para que busque todos los datos relacionanados
             resultGraph = Graph()
             resultGraph += g.triples((None, None, LE))
-            #for s, p, o in resultGraph :
+            # for s, p, o in resultGraph :
             #    print("{0}  __________________   {1}\n".format(s, o))
 
             return HttpResponse(resultGraph.serialize(format='json-ld'), content_type="application/ld+json")
