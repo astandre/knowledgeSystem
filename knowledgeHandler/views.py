@@ -102,8 +102,10 @@ def read_rdf(request):
         if word_serializer.is_valid():
             g = Graph()
             if config('MAIN', cast=bool):
+                print("Using data 4")
                 g.parse("data4.rdf")
             else:
+                print("Using data 2")
                 g.parse("data2.rdf")
             print("graph has %s statements." % len(g))
             link = "http://example.com/resources/" + word_serializer.data["word"]
