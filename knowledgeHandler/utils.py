@@ -20,3 +20,12 @@ def get_subject_as_json(subject):
             new_triple = get_subject_as_json(triple_object.object)
             triple.update({key_name: new_triple})
     return triple
+
+
+def clean_uri(uri):
+    if uri.find('#') != -1:
+        special_char = '#'
+    else:
+        special_char = '/'
+    index = uri.rfind(special_char)
+    return uri[index + 1:len(uri)]

@@ -5,9 +5,13 @@
 {% endblock %}
 {% block title %}Result{% endblock %}
 {% block main %}
+    {% if word %}
+        <h2>{{ word }}  </h2>
+    {% endif %}
     {% if properties %}
         {% for property in properties %}
-            <li>{{ property.key}} | {{ property.value }} </li>
+            <li>{{ property.key }} | <a href="{{ url }}/answer/{{ property.value }}">{{ property.value }}</a>
+            </li>
         {% endfor %}
     {% else %}
         <h3>No se ha encontrado</h3>

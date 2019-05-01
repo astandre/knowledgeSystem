@@ -7,12 +7,13 @@ from rdflib import Graph, plugin, URIRef, RDF
 from decouple import config
 from .serializers import WordSerializer
 from .services import *
-import json
-import types
-import itertools
-
 
 # Create your views here.
+
+if config('MAIN', cast=bool):
+    local_url = config('MAIN_URL')
+else:
+    local_url = config('SLAVE_URL')
 
 
 def knowledge(request):
@@ -20,10 +21,6 @@ def knowledge(request):
     View knowledge JSON
     """
     template = loader.get_template('knowledge.html')
-    if config('MAIN', cast=bool):
-        local_url = config('MAIN_URL')
-    else:
-        local_url = config('SLAVE_URL')
     context = {
         "url": local_url
     }
@@ -32,44 +29,24 @@ def knowledge(request):
 
 def answer(request, word):
     template = loader.get_template('result.html')
-    keys = []
-    values = []
-    keys_clean = []
-    values_clean = []
     properties = []
     context = {}
-    result = search(word)
-    print(result)
-    if len(result) > 0:
-        for i in result:
-            for j in i.keys():
-                keys.append(j)
-            for k in i.values():
-                values.append(k)
-        for i in keys:
-            if i == "@id":
-                keys_clean.append(i)
-            else:
-                str = i
-                str1 = str.rsplit('/', 1)[1]
-                keys_clean.append(str1)
-
-        for i in values:
-            if type(i) is list:
-                str = i[0].get("@id")
-                str = str.rsplit('/', 1)[1]
-                values_clean.append(str)
-            else:
-                str = i.rsplit('/', 1)[1]
-                values_clean.append(str)
-
-        for k, v in zip(keys_clean, values_clean):
+    results = search(word)
+    # print(results)
+    if len(results) > 0:
+        for result in results:
+            # print(result)
+            keys = list(result.keys())
+            key = clean_uri(keys[1])
+            value = clean_uri(result[keys[0]])
+            # print(keys)
             data = {
-                "key": k,
-                "value": v
+                "key": key,
+                "value": value
             }
-            # data[k] = v
             properties.append(data)
+        context["word"] = word
+        context["url"] = local_url
         context["properties"] = properties
     return HttpResponse(template.render(context, request))
 
