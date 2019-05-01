@@ -1,229 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:ns0="http://lod.nl.go.kr/ontology/"
-         xmlns:ns1="http://dbpedia.org/ontology/"
-         xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:ns2="http://dbpedia.org/page/"
-         xmlns:ns3="http://example.com/resources/"
-         xmlns:ns4="https://www.ebu.ch/metadata/ontologies/ebucore/index.html#"
-         xmlns:ns5="http://observedchange.com/tisc/ns/#"
-         xmlns:ns6="http://rdaregistry.info/Elements/u/"
-         xmlns:foaf="http://xmlns.com/foaf/0.1/"
-         xmlns:ns7="http://rdf.muninn-project.org/ontologies/appearances#"
-         xmlns:ns8="http://inference-web.org/2.0/pml-provenance.owl#"
-         xmlns:ns9="https://w3id.org/i40/sto#"
-         xmlns:ns10="http://ns.nature.com/terms/"
-         xmlns:ns11="https://w3id.org/BCI-ontology#"
-         xmlns:ns12="http://vocab.deri.ie/void#"
-         xmlns:ns13="http://lsdis.cs.uga.edu/projects/semdis/opus#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:ns14="http://purl.org/NET/c4dm/event.owl#"
-         xmlns:ns15="http://dati.cdec.it/lod/shoah/"
+         xmlns:ns0="https://schema.org/"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:ns16="https://d-nb.info/standards/elementset/gnd#"
-         xmlns:ns17="http://purl.org/spar/deo/"
-         xmlns:ns18="http://vocab.org/bio/#"
-         xmlns:dc11="http://purl.org/dc/elements/1.1/">
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
-  <rdf:Description rdf:about="http://example.com/resources/Maria">
-    <rdf:type rdf:resource="http://purl.org/spar/fabioNovel"/>
-    <ns0:publishedIn rdf:resource="http://dbpedia.org/page/Ecuador"/>
-    <ns1:genre rdf:resource="http://dbpedia.org/page/Novel"/>
-    <dc:language rdf:resource="http://dbpedia.org/page/Spanish_language"/>
-    <ns2:writer rdf:resource="http://example.com/resources/MiguelRiofrio"/>
-    <ns3:placeWriting rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/NicaYacu">
-    <rdf:type rdf:resource="http://purl.org/spar/fabioNovel"/>
-    <ns0:publishedIn rdf:resource="http://dbpedia.org/page/Ecuador"/>
-    <ns1:genre rdf:resource="http://dbpedia.org/page/Novel"/>
-    <dc:language rdf:resource="http://dbpedia.org/page/Spanish_language"/>
-    <ns2:writer rdf:resource="http://example.com/resources/MiguelRiofrio"/>
-    <ns3:placeWriting rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/DelirioDeBolivar">
-    <rdf:type rdf:resource="http://purl.org/spar/fabioNovel"/>
-    <ns0:publishedIn rdf:resource="http://dbpedia.org/page/Ecuador"/>
-    <ns1:genre rdf:resource="http://dbpedia.org/page/Novel"/>
-    <dc:language rdf:resource="http://dbpedia.org/page/Spanish_language"/>
-    <ns2:writer rdf:resource="http://example.com/resources/MiguelRiofrio"/>
-    <ns3:placeWriting rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/CreacionesDeLenguaje">
-    <rdf:type rdf:resource="http://purl.org/spar/fabioInstructionalWork"/>
-    <ns0:publishedIn rdf:resource="http://dbpedia.org/page/Peru"/>
-    <ns1:genre rdf:resource="http://dbpedia.org/page/Book"/>
-    <dc:language rdf:resource="http://dbpedia.org/page/Spanish_language"/>
-    <ns2:writer rdf:resource="http://example.com/resources/MiguelRiofrio"/>
-    <ns3:placeWriting rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/Emancipada">
-    <rdf:type rdf:resource="http://purl.org/spar/fabioNovel"/>
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/Eduardo">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-        <ns5:hasHeight>Media</ns5:hasHeight>
-        <ns6:placeOfResidence rdf:resource="http://dbpedia.org/page/Quito"/>
-        <foaf:lastName>Ramirez</foaf:lastName>
-        <ns7:hasAppearance>regulares</ns7:hasAppearance>
+  <rdf:Description rdf:about="http://example.com/resources/Nina">
+    <rdf:type rdf:resource="http://purl.org/spar/fabioPoem"/>
+    <ns0:name>Nina</ns0:name>
+    <ns0:overview>Es un poema largo que alude a la leyenda de quechua de Nina Yacu.</ns0:overview>
+    <ns0:genre rdf:resource="http://dbpedia.org/ontologyPoem"/>
+    <ns0:sdDatePublished>1847</ns0:sdDatePublished>
+    <ns0:citation>Leyenda Quichua</ns0:citation>
+    <ns0:autor>
+      <rdf:Description rdf:about="http://example.com/resources/MiguelRiofrio">
+        <owl:sameAs rdf:resource="http://dbpedia.org/page/Miguel_Riofrio"/>
+        <ns0:hasOccupation rdf:resource="http://dbpedia.org/page/poet"/>
+        <ns0:hasOccupation rdf:resource="http://dbpedia.org/page/lawyer"/>
+        <ns0:hasOccupation rdf:resource="http://dbpedia.org/page/professor"/>
+        <ns0:hasOccupation rdf:resource="http://dbpedia.org/page/writer"/>
+        <ns0:birthDate>1819-09-07</ns0:birthDate>
+        <ns0:birthPlace rdf:resource="http://dbpedia.org/page/Loja_Province"/>
+        <ns0:deathDate>1879-10-11</ns0:deathDate>
+        <ns0:deathPlace rdf:resource="http://dbpedia.org/page/Peru"/>
+        <ns0:alumniOf>Pedro Cevallos</ns0:alumniOf>
       </rdf:Description>
-    </ns4:hAsCharacter>
+    </ns0:autor>
 
-    <ns4:hAsCharacter rdf:resource="http://example.com/resources/Rosaura"/>
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/Madre">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
+    <ns0:isPartOf>
+      <rdf:Description rdf:about="http://example.com/resources/SilabasGramaticales">
+        <rdfs:comment>Son las sílabas resultantes de la división silábica de cada una de las palabras.</rdfs:comment>
       </rdf:Description>
-    </ns4:hAsCharacter>
+    </ns0:isPartOf>
 
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/Padre">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
+    <ns0:isPartOf>
+      <rdf:Description rdf:about="http://example.com/resources/SilabasPoeticas">
+        <rdfs:comment>Son las sílabas gramaticales teniendo en cuenta las sinalefas que se forman en el verso.</rdfs:comment>
       </rdf:Description>
-    </ns4:hAsCharacter>
+    </ns0:isPartOf>
 
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/DonPedro">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-        <foaf:lastName>Mendoza</foaf:lastName>
+    <ns0:isPartOf>
+      <rdf:Description rdf:about="http://example.com/resources/Rimas">
+        <rdfs:comment>Se considera rima de un verso los fonemas a partir de la última vocal tónica del verso, esta incluida.</rdfs:comment>
       </rdf:Description>
-    </ns4:hAsCharacter>
+    </ns0:isPartOf>
 
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/Cura">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-      </rdf:Description>
-    </ns4:hAsCharacter>
-
-    <ns4:hAsCharacter>
-      <rdf:Description rdf:about="http://example.com/resources/LosCriados">
-        <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-      </rdf:Description>
-    </ns4:hAsCharacter>
-
-    <ns4:hAsCharacter rdf:resource="http://example.com/resources/DonAnselmo"/>
-    <ns1:abstract>Se trata de un chica en el siglo XIX que decide emanciparse de su padre</ns1:abstract>
-    <ns0:publishedIn rdf:resource="http://dbpedia.org/page/Ecuador"/>
-    <ns8:hasPublicationDateTime>1863</ns8:hasPublicationDateTime>
-    <ns9:published rdf:resource="http://example.com/resources/LaUnion"/>
-    <ns1:genre rdf:resource="http://dbpedia.org/page/Novel"/>
-    <dc:language rdf:resource="http://dbpedia.org/page/Spanish_language"/>
-    <ns2:writer rdf:resource="http://example.com/resources/MiguelRiofrio"/>
-    <ns10:pages>149</ns10:pages>
-    <ns4:hasKeyword>Libertad</ns4:hasKeyword>
-    <ns11:hasScene rdf:resource="http://example.com/resources/Malacatos"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Privativa"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Desdeñado"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Morbidez"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Exhalacion"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Voluptuosidad"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Teson"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Agreste"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Acequias"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Alquerias"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Truhanescos"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Miserere"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Enjuto"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Prolijidad"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Melindres"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Reciproco"/>
-    <ns12:vocabulary rdf:resource="http://example.com/resources/Antifona"/>
-    <ns13:chapter>2</ns13:chapter>
-    <ns3:escritoEn>
-      <rdf:Description rdf:about="http://example.com/resources/TiempoCronologico">
-        <rdfs:comment>La novela relata que los sucesos ocurren en 1841</rdfs:comment>
-      </rdf:Description>
-    </ns3:escritoEn>
-
-    <ns3:hasSeason>
-      <rdf:Description rdf:about="http://example.com/resources/TiempoHistorico">
-        <rdfs:comment>La obra fue escrita en la Apoca del Romanticismo, en el año de 1863</rdfs:comment>
-      </rdf:Description>
-    </ns3:hasSeason>
-
-    <ns3:hasSeason>
-      <rdf:Description rdf:about="http://example.com/resources/TiempoAmbiental">
-        <rdfs:comment>El ambiente de la historia es en pleno verano</rdfs:comment>
-      </rdf:Description>
-    </ns3:hasSeason>
-
-    <ns3:hasSeason>
-      <rdf:Description rdf:about="http://example.com/resources/TiempoGramatical">
-        <rdfs:comment>La historia se relata en tercera persona</rdfs:comment>
-      </rdf:Description>
-    </ns3:hasSeason>
-
-    <ns3:placeWriting rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/DesarolloEmancipada">
-    <rdf:type rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
-    <ns14:year>1800</ns14:year>
-    <ns14:place rdf:resource="http://dbpedia.org/page/Loja"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/Parte1">
-    <ns13:chapter_of rdf:resource="http://example.com/resources/Emancipada"/>
-    <ns13:chapter>4</ns13:chapter>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/Parte2">
-    <ns13:chapter_of rdf:resource="http://example.com/resources/Emancipada"/>
-    <ns13:chapter>3</ns13:chapter>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/Rosaura">
-    <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-    <ns1:spouse rdf:resource="http://example.com/resources/DonAnselmo"/>
-    <ns5:hasHeight>Alta</ns5:hasHeight>
-    <ns1:hairColor>castaño oscuro</ns1:hairColor>
-    <foaf:lastName>Mendoza</foaf:lastName>
-    <ns7:hasAppearance>fina</ns7:hasAppearance>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/DonAnselmo">
-    <rdf:type rdf:resource="http://sparql.cwrc.ca/ontologies/cwrc#FictionalPerson"/>
-    <ns15:widowerOf rdf:resource="http://example.com/resources/Rosaura"/>
-    <foaf:lastName>Aguirre</foaf:lastName>
-    <foaf:lastName>Zuñiga</foaf:lastName>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/M">
-    <dc:isPartOf rdf:resource="http://dbpedia.org/page/Ecuador"/>
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/MiguelRiofrio">
-    <owl:sameAs rdf:resource="http://dbpedia.org/page/Miguel_Riofrio"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/politician"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/writer"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/lawyer"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/professor"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/poet"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/journalist"/>
-    <ns16:professionOrOccupation rdf:resource="http://dbpedia.org/page/ambassador"/>
-    <ns17:contribution rdf:resource="http://example.com/resources/Emancipada"/>
-    <ns17:contribution rdf:resource="http://example.com/resources/NicaYacu"/>
-    <ns17:contribution rdf:resource="http://example.com/resources/Maria"/>
-    <ns17:contribution rdf:resource="http://example.com/resources/DelirioDeBolivar"/>
-    <ns17:contribution rdf:resource="http://example.com/resources/CreacionesDeLenguaje"/>
-    <ns18:Birth rdf:resource="http://example.com/resources/NacimientoMiguelRiofrio"/>
-    <ns18:Death>
-      <rdf:Description rdf:about="http://example.com/resources/MuerteMiguelRiofrio">
-        <dc11:date>11 de octubre de 1879</dc11:date>
-        <ns18:place rdf:resource="http://dbpedia.org/page/Loja_Province"/>
-      </rdf:Description>
-    </ns18:Death>
-
-  </rdf:Description>
-
-  <rdf:Description rdf:about="http://example.com/resources/NacimientoMiguel">
-    <dc11:date>7 de septiembre de 1822</dc11:date>
-    <ns18:principal rdf:resource="http://dbpedia.org/page/Miguel_Riofrio"/>
-    <ns18:place rdf:resource="http://dbpedia.org/page/Loja_Province"/>
+    <ns0:hasPart rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ns0:hasPart>
   </rdf:Description>
 
 </rdf:RDF>
