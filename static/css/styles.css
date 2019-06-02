@@ -3,15 +3,19 @@
   padding: 0;
 }
 
-#content_title {
+header {
   width: 100%;
   padding: 1rem 0;
   background-color: #fff;
   text-align: center;
 }
-#content_title h1 {
-  color: #00B4CC;
+header h1 {
+  color: #32323d;
   padding: 20px 0;
+}
+
+.header_aux {
+  box-shadow: 0 3px 5px 0.3px rgba(0, 0, 0, 0.24);
 }
 
 .wrap {
@@ -40,7 +44,7 @@
 #authors_content h4 {
   padding: 1rem 0;
   margin-left: 4%;
-  color: #00B4CC;
+  color: #32323d;
 }
 #authors_content ul {
   list-style: none;
@@ -60,6 +64,32 @@
 }
 #authors_content ul li p {
   color: #ccc;
+}
+
+#result_content {
+  width: 80%;
+  margin: auto;
+  padding: 3em 0;
+  min-height: 25em;
+}
+#result_content h2 {
+  padding: 10px 10px 10px;
+  background-color: #f0f0f5;
+  border-left: 5px solid #666699;
+}
+#result_content table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 2% auto 0;
+}
+#result_content table td, #result_content table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+#result_content table tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 footer {

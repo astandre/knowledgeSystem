@@ -17,8 +17,9 @@
     <title>{% block title %}{% endblock %}  </title>
 
 </head>
-<body>
-<header>
+<body onload="custom_head()">
+<header id="myheader">
+    <h1>Buscador de Datos Enlazados</h1>
 </header>
 {% block main %}
 
@@ -49,6 +50,17 @@
 <footer>
     <h6>Knowledge-Based Systems Research Group</h6>
 </footer>
+
+<script>
+    function custom_head() {
+        // body...
+        var pathname = window.location.pathname;
+        if (pathname != '/knowledge') {
+            var element = document.getElementById("myheader");
+            element.classList.add("header_aux");
+        }
+    }
+</script>
 
 </body>
 </html>

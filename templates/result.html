@@ -5,15 +5,25 @@
 {% endblock %}
 {% block title %}Result{% endblock %}
 {% block main %}
+<section id="result_content">
     {% if word %}
         <h2>{{ word }}  </h2>
     {% endif %}
     {% if properties %}
+        <table>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+          </tr>
         {% for property in properties %}
-            <li>{{ property.key }} | <a href="{{ url }}/answer/{{ property.value }}">{{ property.value }}</a>
-            </li>
+            <tr>
+                <td>{{ property.key }}</td>
+                <td><a href="{{ url }}/answer/{{ property.value }}">{{ property.value }}</td>
+            </tr>
         {% endfor %}
+        </table>
     {% else %}
         <h3>No se ha encontrado</h3>
     {% endif %}
+</section>
 {% endblock %}

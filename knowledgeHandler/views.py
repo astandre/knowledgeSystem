@@ -48,6 +48,8 @@ def answer(request, word):
         context["word"] = word
         context["url"] = local_url
         context["properties"] = properties
+        print('Going to result')
+        print(context)
     return HttpResponse(template.render(context, request))
 
 
